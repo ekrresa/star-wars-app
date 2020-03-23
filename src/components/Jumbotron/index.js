@@ -12,7 +12,7 @@ export function Jumbotron() {
 			<section className="header-logo-row">
 				<div className="header-logo-container">
 					<Link to="/">
-						<img src={logo} alt="app logo" />
+						<img data-testid="siteLogo" src={logo} alt="app logo" />
 					</Link>
 				</div>
 			</section>
@@ -20,7 +20,7 @@ export function Jumbotron() {
 			<section className="hero">
 				<div className="row align-center">
 					<div className="hero-img">
-						<img src={logo} alt="title" />
+						<img data-testid="heroLogo" src={logo} alt="title" />
 					</div>
 					<div className="hero-title">
 						<h1>directory</h1>
@@ -30,12 +30,16 @@ export function Jumbotron() {
 
 				<p className="hero-desc">Find your favourite Characters, Starships and Planets</p>
 
-				<form className="hero-searchform">
+				<form data-testid="searchForm" className="hero-searchform">
 					<div className="hero-formcontainer">
 						<div className="hero-searchicon">
-							<FiSearch />
+							<FiSearch data-testid="searchInputIcon" />
 						</div>
-						<input className="hero-searchinput" placeholder="Enter a search term..." />
+						<input
+							data-testid="searchInput"
+							className="hero-searchinput"
+							placeholder="Enter a search term..."
+						/>
 					</div>
 				</form>
 			</section>
