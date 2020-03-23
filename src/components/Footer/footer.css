@@ -1,0 +1,18 @@
+.footer {
+	background-color: #1b3952;
+	font-size: 1.5rem;
+	color: #fff;
+	bottom: 0;
+	text-align: center;
+	margin-top: auto;
+}
+.footer-copyright {
+	color: #ffffff99;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer-copyright a {
+	color: #fff;
+	margin-left: 5px;
+}
