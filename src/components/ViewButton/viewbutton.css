@@ -1,0 +1,14 @@
+.viewbtn-container {
+	margin-top: 2em;
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+.viewbtn {
+	text-transform: uppercase;
+	border: 1.5px solid #383737;
+	width: 30%;
+	height: 4rem;
+	border-radius: 7px;
+	line-height: 2.6;
+}

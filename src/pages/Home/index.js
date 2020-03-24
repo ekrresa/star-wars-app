@@ -5,9 +5,10 @@ import { Jumbotron } from '../../components/Jumbotron';
 import { Footer } from '../../components/Footer';
 import { Container } from '../../components/Container';
 import { SectionHeader } from '../../components/SectionHeader';
+import { StarshipCard } from '../../components/StarshipsCard';
+import { ViewMoreButton } from '../../components/ViewButton';
 
 import './home.css';
-import { StarshipCard } from '../../components/StarshipsCard';
 
 export default function Home() {
 	const [starships, setStarships] = useState([]);
@@ -35,6 +36,7 @@ export default function Home() {
 							return <StarshipCard data={item} key={item.name} />;
 						})}
 					</section>
+					<ViewMoreButton />
 				</Container>
 			</section>
 			<Footer />
