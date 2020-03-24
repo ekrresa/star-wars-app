@@ -8,7 +8,7 @@
 	text-transform: uppercase;
 	border: 1.5px solid #383737;
 	width: 30%;
-	height: 4rem;
 	border-radius: 7px;
-	line-height: 2.6;
+	line-height: 1.6;
+	font-size: 1.5rem;
 }
