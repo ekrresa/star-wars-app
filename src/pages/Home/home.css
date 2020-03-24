@@ -39,6 +39,12 @@
 	row-gap: 2em;
 }
 
+@media screen and (max-width: 600px) {
+	.character-grid {
+		grid-auto-rows: 21em;
+	}
+}
+
 .section {
 	margin-bottom: 6em;
 }

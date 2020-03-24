@@ -13,7 +13,9 @@
     "react-icons": "3.9.0",
     "react-image": "2.4.0",
     "react-scripts": "3.4.1",
+    "react-slick": "0.25.2",
     "react-spinners": "0.8.1",
+    "slick-carousel": "1.8.1",
     "swr": "0.1.18"
   },
   "scripts": {

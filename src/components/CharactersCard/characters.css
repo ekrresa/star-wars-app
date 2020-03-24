@@ -14,6 +14,12 @@
 	display: flex;
 }
 
+@media screen and (max-width: 810px) {
+	.character-card-flex {
+		flex-direction: column;
+	}
+}
+
 .character-card-image {
 	flex: 1 1 60%;
 }
@@ -41,6 +47,7 @@
 	font-size: 1.4rem;
 	font-weight: 400;
 	color: #67615a;
+	text-transform: capitalize;
 }
 
 .character-card-buttonholder {
