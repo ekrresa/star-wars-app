@@ -1,0 +1,15 @@
+.section-header {
+	color: #4a4848;
+	margin: 1em 0em 1.7em;
+	font-size: 3rem;
+	text-align: center;
+	text-transform: capitalize;
+}
+.section-header > h2 {
+	margin-bottom: 0;
+}
+.section-linebreak {
+	width: 10%;
+	border: 3px solid #4a4848;
+	margin: 0.7rem auto;
+}
