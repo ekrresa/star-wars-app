@@ -2,9 +2,12 @@
 	background-color: #1b3952;
 	font-size: 1.5rem;
 	color: #fff;
+	position: sticky;
+	left: 0;
 	bottom: 0;
+	padding: 1em;
 	text-align: center;
-	margin-top: auto;
+	z-index: -1;
 }
 .footer-copyright {
 	color: #ffffff99;
@@ -12,7 +15,12 @@
 	justify-content: center;
 	align-items: center;
 }
-.footer-copyright a {
-	color: #fff;
+.footer a {
+	color: rgb(209, 142, 142);
 	margin-left: 5px;
+}
+.footer > p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
