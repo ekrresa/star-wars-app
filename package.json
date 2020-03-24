@@ -42,5 +42,6 @@
     "husky": "4.2.3",
     "prettier": "2.0.1",
     "pretty-quick": "2.0.1"
-  }
+  },
+  "proxy": "https://swapi.co/api"
 }
