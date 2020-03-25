@@ -8,12 +8,14 @@ import { SectionHeader } from '../../components/SectionHeader';
 import { StarshipCard } from '../../components/StarshipsCard';
 import { CharacterCard } from '../../components/CharactersCard';
 import { ViewMoreButton } from '../../components/ViewButton';
+import { Slider } from '../../components/Carousel';
 
 import './home.css';
 
 export default function Home() {
 	const [starships, setStarships] = useState([]);
 	const [characters, setCharacters] = useState([]);
+	const [planets, setPlanets] = useState([]);
 
 	useEffect(() => {
 		async function getStarships() {
@@ -32,8 +34,17 @@ export default function Home() {
 			setCharacters(characters);
 		}
 
+		async function getPlanets() {
+			const planets = await Axios.get('/planets/')
+				.then((res) => res.data.results)
+				.catch((err) => console.error(err));
+
+			setPlanets(planets);
+		}
+
 		getStarships();
 		getCharacters();
+		getPlanets();
 	}, []);
 
 	return (
@@ -46,6 +57,11 @@ export default function Home() {
 						{starships.slice(0, 6).map((item) => {
 							return <StarshipCard data={item} key={item.name} />;
 						})}
+					</section>
+					<ViewMoreButton />
+					<SectionHeader title="popular planets" />
+					<section className="carousel-grid">
+						<Slider data={planets} />
 					</section>
 					<ViewMoreButton />
 					<SectionHeader title="popular characters" />

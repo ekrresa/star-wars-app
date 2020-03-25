@@ -30,6 +30,11 @@
 	}
 }
 
+.carousel-grid {
+	max-width: 72em;
+	margin: 0 auto;
+}
+
 .character-grid {
 	max-width: 67em;
 	margin: 0 auto;
