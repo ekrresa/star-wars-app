@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Router } from '@reach/router';
 
-import Loader from '../components/loader';
+import Loader from '../components/Loader';
 
 const Homepage = lazy(() => import('../pages/Home'));
 
