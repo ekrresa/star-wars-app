@@ -33,6 +33,7 @@
 .carousel-grid {
 	max-width: 72em;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .character-grid {
