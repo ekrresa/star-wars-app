@@ -1,8 +1,9 @@
 .home {
 	min-height: 100vh;
-	z-index: 12;
+	z-index: 2;
 	background: #fff;
 	padding-bottom: 6em;
+	position: relative;
 }
 
 .starship-grid {
