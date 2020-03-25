@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from '@brainhubeu/react-carousel';
+import BeatLoader from 'react-spinners/BeatLoader';
 import '@brainhubeu/react-carousel/lib/style.css';
 import './carousel.css';
 
@@ -9,6 +10,10 @@ import planet3 from '../../assets/planet-3.jpg';
 import { Link } from '@reach/router';
 
 export function Slider({ data }) {
+	if (!data) {
+		return <BeatLoader />;
+	}
+
 	return (
 		<Carousel
 			slidesPerPage={3}
