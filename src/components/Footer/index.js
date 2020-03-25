@@ -8,7 +8,10 @@ export function Footer() {
 		<footer className="footer">
 			<p>
 				Created with <FaHeart color="crimson" style={{ margin: '0em .4em' }} /> by
-				<a href="https://github.com/chuck-huey"> Ochuko Ekrresa</a>
+				<a href="https://github.com/chuck-huey" target="_blank" rel="noreferrer noopener">
+					{' '}
+					Ochuko Ekrresa
+				</a>
 			</p>
 			<p className="footer-copyright">
 				<FaRegCopyright style={{ marginRight: '3px' }} /> Star Wars,{' '}

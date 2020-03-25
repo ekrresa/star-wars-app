@@ -1,8 +1,9 @@
 .home {
 	min-height: 100vh;
-	z-index: 12;
+	z-index: 2;
 	background: #fff;
 	padding-bottom: 6em;
+	position: relative;
 }
 
 .starship-grid {
@@ -29,6 +30,11 @@
 	}
 }
 
+.carousel-grid {
+	max-width: 72em;
+	margin: 0 auto;
+}
+
 .character-grid {
 	max-width: 67em;
 	margin: 0 auto;
@@ -37,6 +43,12 @@
 	grid-auto-rows: 26em;
 	column-gap: 1em;
 	row-gap: 2em;
+}
+
+@media screen and (max-width: 600px) {
+	.character-grid {
+		grid-auto-rows: 21em;
+	}
 }
 
 .section {
