@@ -4,9 +4,7 @@ import BeatLoader from 'react-spinners/BeatLoader';
 import '@brainhubeu/react-carousel/lib/style.css';
 import './carousel.css';
 
-import planet1 from '../../assets/planet-1.jpg';
-import planet2 from '../../assets/planet-2.jpg';
-import planet3 from '../../assets/planet-3.jpg';
+import planet1 from '../../assets/images/planet-2.jpg';
 import { Link } from '@reach/router';
 
 export function Slider({ data }) {

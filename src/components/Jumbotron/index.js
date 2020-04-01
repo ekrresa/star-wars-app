@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from '@reach/router';
 import { FiSearch } from 'react-icons/fi';
 
-import banner from '../../assets/hero-banner.jpg';
-import logo from '../../assets/logo.png';
+import banner from '../../assets/images/hero-banner.jpg';
+import logo from '../../assets/images/logo.png';
 import './jumbotron.css';
 
 export function Jumbotron() {

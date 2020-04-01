@@ -1,6 +1,6 @@
 import React from 'react';
 
-import character1 from '../../assets/character-2.jpg';
+import character1 from '../../assets/images/character-2.jpg';
 import './characters.css';
 
 export function CharacterCard({ data }) {
