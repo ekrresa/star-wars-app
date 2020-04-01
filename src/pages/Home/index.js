@@ -8,7 +8,7 @@ import { Container } from '../../components/Container';
 import { StarshipCard } from '../../components/StarshipsCard';
 import { CharacterCard } from '../../components/CharactersCard';
 import { Slider } from '../../components/Carousel';
-import { HomeSection } from './HomeSection';
+import { HomeSection } from './components/HomeSection';
 
 import './home.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { SectionHeader } from '../../components/SectionHeader';
-import { ViewMoreButton } from '../../components/ViewButton';
+import { SectionHeader } from '../../../components/SectionHeader';
+import { ViewMoreButton } from './ViewButton';
 
 export function HomeSection({ title, children }) {
 	return (
