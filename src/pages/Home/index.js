@@ -25,8 +25,8 @@ export default function Home() {
 					<HomeSection title="popular starships">
 						<section className="starship-grid">
 							{starships ? (
-								starships.slice(0, 6).map((item) => {
-									return <StarshipCard data={item} key={item.name} />;
+								starships.slice(0, 6).map((item, index) => {
+									return <StarshipCard data={item} key={item.name} index={index} />;
 								})
 							) : (
 								<BeatLoader />

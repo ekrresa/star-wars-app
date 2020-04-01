@@ -1,13 +1,15 @@
 import React from 'react';
 
-import starship1 from '../../assets/starship-1.jpg';
+import { starshipImages } from '../../utils/images';
 import './starships.css';
 
-export function StarshipCard({ data }) {
+export function StarshipCard({ data, index }) {
+	const shipImage = starshipImages[index];
+
 	return (
 		<div className="star-card star-card-flex">
 			<div className="star-card-image">
-				<img src={starship1} style={{ height: '100%' }} alt="starship" />
+				<img src={shipImage} style={{ height: '100%' }} alt="starship" />
 			</div>
 			<div className="star-card-body">
 				<div className="star-card-info">
