@@ -1,16 +1,21 @@
 import React from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import BeatLoader from 'react-spinners/BeatLoader';
+import { Link } from '@reach/router';
+
+import { starPlanets } from '../../utils/images';
 import '@brainhubeu/react-carousel/lib/style.css';
 import './carousel.css';
-
-import planet1 from '../../assets/images/planet-2.jpg';
-import { Link } from '@reach/router';
 
 export function Slider({ data }) {
 	if (!data) {
 		return <BeatLoader />;
 	}
+
+	const getRandomPlanetImage = () => {
+		const randomIndex = Math.floor(Math.random() * starPlanets.length);
+		return starPlanets[randomIndex];
+	};
 
 	return (
 		<Carousel
@@ -33,7 +38,7 @@ export function Slider({ data }) {
 				return (
 					<Link to="#" key={item.name}>
 						<div className="carousel-image">
-							<img src={planet1} alt="planet1" />
+							<img src={getRandomPlanetImage()} alt="planet1" />
 							<div className="carousel-planet">{item.name}</div>
 						</div>
 					</Link>
