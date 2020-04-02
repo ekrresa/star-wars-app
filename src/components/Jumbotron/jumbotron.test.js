@@ -1,25 +1,31 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { createHistory, createMemorySource, LocationProvider } from '@reach/router';
 
 import { Jumbotron } from './index';
 
-describe('Jumbotron Component', () => {
-	beforeEach(() => {
-		render(<Jumbotron />);
-	});
+function renderWithRouter(
+	ui,
+	{ route = '/', history = createHistory(createMemorySource(route)) } = {},
+) {
+	return {
+		...render(<LocationProvider history={history}>{ui}</LocationProvider>),
+		history,
+	};
+}
 
+describe('Jumbotron Component', () => {
 	test('should render all images', () => {
-		const siteLogos = screen.getAllByTestId(/Logo/i);
+		const { getAllByTestId } = renderWithRouter(<Jumbotron />);
+		const siteLogos = getAllByTestId(/Logo/i);
+
 		expect(siteLogos.length).toBe(2);
 	});
 
-	test('should render search form', () => {
-		const searchForm = screen.getByTestId('searchForm');
-		const searchInput = screen.getByTestId('searchInput');
-		const searchInputIcon = screen.getByTestId('searchInputIcon');
+	test('should not render search form in homepage', () => {
+		const { queryByTestId } = renderWithRouter(<Jumbotron />);
+		const searchForm = queryByTestId('searchForm');
 
-		expect(searchForm).toBeInTheDocument();
-		expect(searchForm.contains(searchInput)).toBeTruthy();
-		expect(searchForm.contains(searchInputIcon)).toBeTruthy();
+		expect(searchForm).toBeNull();
 	});
 });
