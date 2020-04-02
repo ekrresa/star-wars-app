@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link, useLocation } from '@reach/router';
 import { FiSearch } from 'react-icons/fi';
 
 import banner from '../../assets/images/hero-banner.jpg';
@@ -7,6 +7,8 @@ import logo from '../../assets/images/logo.png';
 import './jumbotron.css';
 
 export function Jumbotron() {
+	const path = useLocation().pathname;
+
 	return (
 		<header className="header" style={{ backgroundImage: `url(${banner})` }}>
 			<section className="header-logo-row">
@@ -30,18 +32,20 @@ export function Jumbotron() {
 
 				<p className="hero-desc">Find your favourite Characters, Starships and Planets</p>
 
-				<form data-testid="searchForm" className="hero-searchform">
-					<div className="hero-formcontainer">
-						<div className="hero-searchicon">
-							<FiSearch data-testid="searchInputIcon" />
+				{path !== '/' && (
+					<form data-testid="searchForm" className="hero-searchform">
+						<div className="hero-formcontainer">
+							<div className="hero-searchicon">
+								<FiSearch data-testid="searchInputIcon" />
+							</div>
+							<input
+								data-testid="searchInput"
+								className="hero-searchinput"
+								placeholder="Enter a search term..."
+							/>
 						</div>
-						<input
-							data-testid="searchInput"
-							className="hero-searchinput"
-							placeholder="Enter a search term..."
-						/>
-					</div>
-				</form>
+					</form>
+				)}
 			</section>
 		</header>
 	);
