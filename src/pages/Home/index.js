@@ -1,5 +1,4 @@
-import React from 'react';
-import useSWR from 'swr';
+import React, { useEffect } from 'react';
 import BeatLoader from 'react-spinners/BeatLoader';
 
 import { Jumbotron } from '../../components/Jumbotron';
@@ -9,13 +8,22 @@ import { StarshipCard } from '../../components/StarshipsCard';
 import { CharacterCard } from '../../components/CharactersCard';
 import { Slider } from '../../components/Carousel';
 import { HomeSection } from './components/HomeSection';
+import { useCancellableSWR } from '../../utils/fetch';
 
 import './home.css';
 
 export default function Home() {
-	const { data: starships } = useSWR('/starships/');
-	const { data: characters } = useSWR('/people/');
-	const { data: planets } = useSWR('/planets/');
+	const [{ data: starships }, starshipsRequest] = useCancellableSWR('/starships/');
+	const [{ data: characters }, charactersRequest] = useCancellableSWR('/people/');
+	const [{ data: planets }, planetsRequest] = useCancellableSWR('/planets/');
+
+	useEffect(() => {
+		return () => {
+			starshipsRequest.cancel();
+			charactersRequest.cancel();
+			planetsRequest.cancel();
+		};
+	}, [charactersRequest, planetsRequest, starshipsRequest]);
 
 	return (
 		<>
