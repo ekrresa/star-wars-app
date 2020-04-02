@@ -13,14 +13,14 @@ export async function fetchData(url, method, data) {
 	}
 }
 
-export function useCancellableSWR(key, options) {
+export function useCancellableSWR(key, swrOptions) {
 	const source = Axios.CancelToken.source();
 
 	return [
 		useSWR(key, (url) => fetchData(url), {
 			revalidateOnFocus: false,
 			refreshInterval: 0,
-			...options,
+			...swrOptions,
 		}),
 		source,
 	];
