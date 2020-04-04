@@ -35,7 +35,7 @@ export default function Home() {
 			<section className="home">
 				<Jumbotron />
 				<Container>
-					<HomeSection title="popular starships">
+					<HomeSection title="popular starships" pageTo="starships">
 						<section className="starship-grid">
 							{starships ? (
 								starships.slice(0, 6).map((item, index) => {
@@ -46,12 +46,12 @@ export default function Home() {
 							)}
 						</section>
 					</HomeSection>
-					<HomeSection title="popular planets">
+					<HomeSection title="popular planets" pageTo="planets">
 						<section className="carousel-grid">
 							<Slider data={planets} />
 						</section>
 					</HomeSection>
-					<HomeSection title="popular characters">
+					<HomeSection title="popular characters" pageTo="people">
 						<section className="character-grid">
 							{characters ? (
 								characters.slice(0, 4).map((item, index) => {
