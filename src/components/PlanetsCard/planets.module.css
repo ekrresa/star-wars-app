@@ -1,0 +1,15 @@
+.card {
+	margin-left: 1em;
+	margin-right: 1em;
+	position: relative;
+}
+
+.card-name {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+	padding: 1.5em;
+	font-size: 2rem;
+}

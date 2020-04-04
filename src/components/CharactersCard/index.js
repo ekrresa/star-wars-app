@@ -1,28 +1,28 @@
 import React from 'react';
 
 import { starCharacters } from '../../utils/images';
-import './characters.css';
+import styles from './characters.module.css';
 
 export function CharacterCard({ data, index }) {
 	const gender = data.gender === 'n/a' ? 'robot' : data.gender;
 
 	return (
-		<div className="character-card character-card-flex">
-			<div className="character-card-image">
+		<div className={`${styles.card} ${styles['card-flex']}`}>
+			<div className={styles['card-image']}>
 				<img
 					src={starCharacters[index]}
 					style={{ height: '100%' }}
 					alt="popular character"
 				/>
 			</div>
-			<div className="character-card-body">
-				<div className="character-card-info">
-					<h4 className="character-name">{data.name}</h4>
+			<div className={styles['card-body']}>
+				<div className={styles['card-info']}>
+					<h4 className={styles['card-info-name']}>{data.name}</h4>
 					<p>{gender}</p>
 					<p>{data.birth_year}</p>
 				</div>
-				<div className="character-card-buttonholder">
-					<a href={data.url} className="btn character-btn">
+				<div className={styles['card-buttonholder']}>
+					<a href={data.url} className={styles['card-btn']}>
 						read more
 					</a>
 				</div>
