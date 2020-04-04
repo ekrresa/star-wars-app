@@ -49,8 +49,8 @@ export default function Home() {
 					<HomeSection title="popular characters">
 						<section className="character-grid">
 							{characters ? (
-								characters.slice(0, 4).map((item) => {
-									return <CharacterCard data={item} key={item.name} />;
+								characters.slice(0, 4).map((item, index) => {
+									return <CharacterCard data={item} key={item.name} index={index} />;
 								})
 							) : (
 								<BeatLoader />
