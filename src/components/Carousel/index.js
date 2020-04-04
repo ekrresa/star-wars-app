@@ -3,6 +3,7 @@ import Carousel from '@brainhubeu/react-carousel';
 import BeatLoader from 'react-spinners/BeatLoader';
 import { Link } from '@reach/router';
 
+import { PlanetsCard } from '../PlanetsCard';
 import { starPlanets } from '../../utils/images';
 import '@brainhubeu/react-carousel/lib/style.css';
 import './carousel.css';
@@ -37,10 +38,7 @@ export function Slider({ data }) {
 			{data.slice(0, 3).map((item) => {
 				return (
 					<Link to="#" key={item.name}>
-						<div className="carousel-image">
-							<img src={getRandomPlanetImage()} alt="planet1" />
-							<div className="carousel-planet">{item.name}</div>
-						</div>
+						<PlanetsCard img={getRandomPlanetImage()} name={item.name} />
 					</Link>
 				);
 			})}
