@@ -1,4 +1,4 @@
-.character-card {
+.card {
 	position: relative;
 	background-color: #fff;
 	border: 1px solid #00000020;
@@ -6,25 +6,21 @@
 	transition: all 0.3s ease;
 }
 
-.character-card:hover {
-	/* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important; */
-}
-
-.character-card-flex {
+.card-flex {
 	display: flex;
 }
 
 @media screen and (max-width: 810px) {
-	.character-card-flex {
+	.card-flex {
 		flex-direction: column;
 	}
 }
 
-.character-card-image {
+.card-image {
 	flex: 1 1 60%;
 }
 
-.character-card-body {
+.card-body {
 	flex: 1 1 40%;
 	padding: 1em;
 	background: #cdd7e45e;
@@ -33,28 +29,28 @@
 	justify-content: space-around;
 }
 
-.character-card-info * {
+.card-info * {
 	margin: 0;
 }
 
-.character-name {
+.card-info-name {
 	font-size: 2rem;
 	text-transform: capitalize;
 	font-weight: 600;
 }
 
-.character-card-info p {
+.card-info p {
 	font-size: 1.4rem;
 	font-weight: 400;
 	color: #67615a;
 	text-transform: capitalize;
 }
 
-.character-card-buttonholder {
+.card-buttonholder {
 	text-align: end;
 }
 
-.character-btn {
+.card-btn {
 	border-bottom: 1px solid;
 	border-bottom-width: medium;
 	padding-left: 0;
