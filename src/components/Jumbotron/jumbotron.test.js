@@ -28,4 +28,13 @@ describe('Jumbotron Component', () => {
 
 		expect(searchForm).toBeNull();
 	});
+
+	test('should render search form in other pages', () => {
+		const { queryByTestId } = renderWithRouter(<Jumbotron />, {
+			route: '/resource/page',
+		});
+		const searchForm = queryByTestId('searchForm');
+
+		expect(searchForm).toBeDefined();
+	});
 });
