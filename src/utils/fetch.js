@@ -1,11 +1,9 @@
 import Axios from 'axios';
 import useSWR from 'swr';
 
-export async function fetchData(url, method, data) {
-	method = method || 'GET';
-
+export async function fetchData(url, token) {
 	try {
-		const result = await Axios({ url, method, data });
+		const result = await Axios({ url, cancelToken: token });
 		return result.data.results;
 	} catch (error) {
 		console.error(error);
@@ -15,9 +13,10 @@ export async function fetchData(url, method, data) {
 
 export function useCancellableSWR(key, swrOptions) {
 	const source = Axios.CancelToken.source();
+	const token = source.token;
 
 	return [
-		useSWR(key, (url) => fetchData(url), {
+		useSWR(key, (url) => fetchData(url, token), {
 			revalidateOnFocus: false,
 			refreshInterval: 0,
 			...swrOptions,

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import BeatLoader from 'react-spinners/BeatLoader';
+import { useLocation } from '@reach/router';
 
 import { Jumbotron } from '../../components/Jumbotron';
 import { Footer } from '../../components/Footer';
@@ -17,13 +18,17 @@ export default function Home() {
 	const [{ data: characters }, charactersRequest] = useCancellableSWR('/people/');
 	const [{ data: planets }, planetsRequest] = useCancellableSWR('/planets/');
 
+	const path = useLocation().pathname;
+
 	useEffect(() => {
 		return () => {
-			starshipsRequest.cancel();
-			charactersRequest.cancel();
-			planetsRequest.cancel();
+			if (path !== '/') {
+				starshipsRequest.cancel('cancelled starship request');
+				charactersRequest.cancel('cancelled characters request');
+				planetsRequest.cancel('cancelled characters request');
+			}
 		};
-	}, [charactersRequest, planetsRequest, starshipsRequest]);
+	}, [charactersRequest, path, planetsRequest, starshipsRequest]);
 
 	return (
 		<>
