@@ -9,6 +9,11 @@ import planet1 from '../assets/images/planet-1.jpg';
 import planet2 from '../assets/images/planet-2.jpg';
 import planet3 from '../assets/images/planet-3.jpg';
 
+import character1 from '../assets/images/character-1.jpg';
+import character2 from '../assets/images/character-2.webp';
+import character3 from '../assets/images/character-3.jpg';
+import character4 from '../assets/images/character-4.jpg';
+
 export const starshipImages = [
 	starship4,
 	starship2,
@@ -19,3 +24,5 @@ export const starshipImages = [
 ];
 
 export const starPlanets = [planet1, planet2, planet3];
+
+export const starCharacters = [character1, character2, character3, character4];
