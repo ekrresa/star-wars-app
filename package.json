@@ -13,6 +13,7 @@
     "react-dom": "^16.13.1",
     "react-icons": "3.9.0",
     "react-image": "2.4.0",
+    "react-query": "1.2.1",
     "react-scripts": "3.4.1",
     "react-spinners": "0.8.1",
     "swr": "0.1.18"
@@ -20,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-		"test": "react-scripts test --watchAll=false",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
