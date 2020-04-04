@@ -7,9 +7,17 @@ import banner2 from '../../assets/images/hero-banner.jpg';
 import logo from '../../assets/images/logo.png';
 import './jumbotron.css';
 
-export function Jumbotron() {
+export function Jumbotron({ title }) {
 	const path = useLocation().pathname;
 	const banner = path === '/' ? banner2 : banner1;
+
+	const colors = {
+		planets: '#c58127',
+		people: '#27c5b9',
+		starships: '#BB2CD9',
+	};
+
+	const titleColor = colors[title] || '#d8d828';
 
 	return (
 		<header className="header" style={{ backgroundImage: `url(${banner})` }}>
@@ -26,7 +34,7 @@ export function Jumbotron() {
 					<div className="hero-img">
 						<img data-testid="heroLogo" src={logo} alt="title" />
 					</div>
-					<div className="hero-title">
+					<div className="hero-title" style={{ color: titleColor }}>
 						<h1>directory</h1>
 					</div>
 				</div>
