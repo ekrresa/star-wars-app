@@ -2,12 +2,14 @@ import React from 'react';
 import { Link, useLocation } from '@reach/router';
 import { FiSearch } from 'react-icons/fi';
 
-import banner from '../../assets/images/hero-banner.jpg';
+import banner1 from '../../assets/images/resource.jpg';
+import banner2 from '../../assets/images/hero-banner.jpg';
 import logo from '../../assets/images/logo.png';
 import './jumbotron.css';
 
 export function Jumbotron() {
 	const path = useLocation().pathname;
+	const banner = path === '/' ? banner2 : banner1;
 
 	return (
 		<header className="header" style={{ backgroundImage: `url(${banner})` }}>
