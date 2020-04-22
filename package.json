@@ -14,9 +14,9 @@
     "react-icons": "3.9.0",
     "react-image": "2.4.0",
     "react-query": "1.2.1",
+    "react-query-devtools": "1.1.0",
     "react-scripts": "3.4.1",
-    "react-spinners": "0.8.1",
-    "swr": "0.1.18"
+    "react-spinners": "0.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,6 +44,5 @@
     "husky": "4.2.3",
     "prettier": "2.0.1",
     "pretty-quick": "2.0.1"
-  },
-  "proxy": "https://swapi.co/api"
+  }
 }
