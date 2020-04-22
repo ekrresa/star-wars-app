@@ -15,7 +15,7 @@ import './home.css';
 export default function Home() {
 	const { data: starships } = useCancellableQuery(['starships', '/starships/']);
 	const { data: planets } = useCancellableQuery(['planets', '/planets/']);
-	const { data: characters } = useCancellableQuery(['characters', '/people/']);
+	const { data: people } = useCancellableQuery(['people', '/people/']);
 
 	return (
 		<>
@@ -38,10 +38,10 @@ export default function Home() {
 							<Slider data={planets} />
 						</section>
 					</HomeSection>
-					<HomeSection title="popular characters" pageTo="people">
+					<HomeSection title="popular people" pageTo="people">
 						<section className="character-grid">
-							{characters ? (
-								characters.slice(0, 4).map((item, index) => {
+							{people ? (
+								people.slice(0, 4).map((item, index) => {
 									return <CharacterCard data={item} key={item.name} index={index} />;
 								})
 							) : (
