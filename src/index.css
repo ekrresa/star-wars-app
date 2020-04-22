@@ -38,6 +38,12 @@ img {
 	object-fit: cover;
 }
 
+.container {
+	max-width: 85em;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
 .row {
 	display: flex;
 	flex-flow: row wrap;
