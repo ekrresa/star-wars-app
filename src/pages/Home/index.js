@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import BeatLoader from 'react-spinners/BeatLoader';
-import { useLocation } from '@reach/router';
 
 import { Jumbotron } from '../../components/Jumbotron';
 import { Footer } from '../../components/Footer';
@@ -9,26 +8,14 @@ import { StarshipCard } from '../../components/StarshipsCard';
 import { CharacterCard } from '../../components/CharactersCard';
 import { Slider } from '../../components/Carousel';
 import { HomeSection } from './components/HomeSection';
-import { useCancellableSWR } from '../../utils/fetch';
+import { useCancellableQuery } from '../../utils/fetch';
 
 import './home.css';
 
 export default function Home() {
-	const [{ data: starships }, starshipsRequest] = useCancellableSWR('/starships/');
-	const [{ data: characters }, charactersRequest] = useCancellableSWR('/people/');
-	const [{ data: planets }, planetsRequest] = useCancellableSWR('/planets/');
-
-	const path = useLocation().pathname;
-
-	useEffect(() => {
-		return () => {
-			if (path !== '/') {
-				starshipsRequest.cancel('cancelled starship request');
-				charactersRequest.cancel('cancelled characters request');
-				planetsRequest.cancel('cancelled characters request');
-			}
-		};
-	}, [charactersRequest, path, planetsRequest, starshipsRequest]);
+	const { data: starships } = useCancellableQuery(['starships', '/starships/']);
+	const { data: planets } = useCancellableQuery(['planets', '/planets/']);
+	const { data: people } = useCancellableQuery(['people', '/people/']);
 
 	return (
 		<>
@@ -51,10 +38,10 @@ export default function Home() {
 							<Slider data={planets} />
 						</section>
 					</HomeSection>
-					<HomeSection title="popular characters" pageTo="people">
+					<HomeSection title="popular people" pageTo="people">
 						<section className="character-grid">
-							{characters ? (
-								characters.slice(0, 4).map((item, index) => {
+							{people ? (
+								people.slice(0, 4).map((item, index) => {
 									return <CharacterCard data={item} key={item.name} index={index} />;
 								})
 							) : (

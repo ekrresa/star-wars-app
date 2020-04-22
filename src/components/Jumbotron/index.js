@@ -35,7 +35,7 @@ export function Jumbotron({ title }) {
 						<img data-testid="heroLogo" src={logo} alt="title" />
 					</div>
 					<div className="hero-title" style={{ color: titleColor }}>
-						<h1>directory</h1>
+						<h1>{title || 'directory'}</h1>
 					</div>
 				</div>
 				<hr className="hero-linebreak" />
