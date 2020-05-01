@@ -8,14 +8,18 @@ import { StarshipCard } from '../../components/StarshipsCard';
 import { CharacterCard } from '../../components/CharactersCard';
 import { Slider } from '../../components/Carousel';
 import { HomeSection } from './components/HomeSection';
-import { useCancellableQuery } from '../../utils/fetch';
+import { useCancellableQuery, usePagesQuery } from '../../utils/fetch';
 
 import './home.css';
 
 export default function Home() {
 	const { data: starships } = useCancellableQuery(['starships', '/starships/']);
 	const { data: planets } = useCancellableQuery(['planets', '/planets/']);
-	const { data: people } = useCancellableQuery(['people', '/people/']);
+	const { status: peopleStatus, resolvedData: people } = usePagesQuery([
+		'peoplePages',
+		'people',
+		1,
+	]);
 
 	return (
 		<>
@@ -40,9 +44,9 @@ export default function Home() {
 					</HomeSection>
 					<HomeSection title="popular people" pageTo="people">
 						<section className="character-grid">
-							{people ? (
-								people.slice(0, 4).map((item, index) => {
-									return <CharacterCard data={item} key={item.name} index={index} />;
+							{peopleStatus === 'success' ? (
+								people.results.slice(0, 4).map((item) => {
+									return <CharacterCard data={item} key={item.name} />;
 								})
 							) : (
 								<BeatLoader />

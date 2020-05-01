@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { starCharacters } from '../../utils/images';
+import { getImage } from '../../utils';
 import styles from './characters.module.css';
 
-export function CharacterCard({ data, index }) {
+export function CharacterCard({ data }) {
 	const gender = data.gender === 'n/a' ? 'robot' : data.gender;
 
 	return (
 		<div className={`${styles.card} ${styles['card-flex']}`}>
 			<div className={styles['card-image']}>
 				<img
-					src={starCharacters[index]}
+					src={getImage(data.name)}
 					style={{ height: '100%' }}
 					alt="popular character"
 				/>
