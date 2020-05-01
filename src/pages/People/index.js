@@ -30,7 +30,11 @@ export default function People() {
 	const { status, resolvedData } = usePagesQuery(['peoplePages', 'people', page]);
 
 	const handleFilter = (selectedOption) => {
-		navigate(`${location.pathname}?filter=${selectedOption.value}`);
+		const parsed = queryString.parse(location.search);
+		parsed.filter = selectedOption.value;
+		const parsedUrl = queryString.stringify(parsed);
+
+		navigate(`${location.pathname}?${parsedUrl}`);
 	};
 
 	const handlePageClick = (page) => {
