@@ -34,7 +34,6 @@ export default function People() {
 	};
 
 	const handlePageClick = (page) => {
-		console.log(page.selected);
 		const newPage = page.selected + 1;
 		setPage(newPage);
 
@@ -44,8 +43,6 @@ export default function People() {
 
 		navigate(`${location.pathname}?${parsedUrl}`);
 	};
-
-	console.log(page);
 
 	return (
 		<>
@@ -75,7 +72,7 @@ export default function People() {
 								marginPagesDisplayed={2}
 								pageRangeDisplayed={2}
 								disableInitialCallback={true}
-								initialPage={+page}
+								initialPage={parseInt(page) - 1}
 								containerClassName={'paginate-container'}
 								pageClassName={'paginate-item'}
 								previousLabel={<AiFillCaretLeft />}
