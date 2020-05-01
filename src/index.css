@@ -52,6 +52,11 @@ img {
 	align-items: center;
 }
 
+a,
+a:focus {
+	outline: none;
+}
+
 .btn {
 	display: inline-block;
 	font-weight: 400;
