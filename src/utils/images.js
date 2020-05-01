@@ -17,6 +17,7 @@ import r2d2 from '../assets/images/r2-d2.jpg';
 import owen from '../assets/images/owen-lars.jpg';
 import kenobi from '../assets/images/obi-wan-kenobi.jpg';
 import anakin from '../assets/images/Anakin-Skywalker.jpeg';
+import beru from '../assets/images/beru-whitesunlars.jpg';
 import unavailable from '../assets/images/character-unavailable.jpg';
 
 export const starshipImages = [
@@ -39,5 +40,6 @@ export const starCharacters = {
 	'darth vader': vader,
 	'owen lars': owen,
 	'obi-wan kenobi': kenobi,
+	'beru whitesun lars': beru,
 	unavailable,
 };
