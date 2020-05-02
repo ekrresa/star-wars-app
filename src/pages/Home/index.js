@@ -13,7 +13,11 @@ import { useCancellableQuery, usePagesQuery } from '../../utils/fetch';
 import './home.css';
 
 export default function Home() {
-	const { data: starships } = useCancellableQuery(['starships', '/starships/']);
+	const { status: starshipsStatus, resolvedData: starships } = usePagesQuery([
+		'starshipsPages',
+		'starships',
+		1,
+	]);
 	const { data: planets } = useCancellableQuery(['planets', '/planets/']);
 	const { status: peopleStatus, resolvedData: people } = usePagesQuery([
 		'peoplePages',
@@ -28,8 +32,8 @@ export default function Home() {
 				<Container>
 					<HomeSection title="popular starships" pageTo="starships">
 						<section className="starship-grid">
-							{starships ? (
-								starships.slice(0, 6).map((item, index) => {
+							{starshipsStatus === 'success' ? (
+								starships.results.slice(0, 6).map((item, index) => {
 									return <StarshipCard data={item} key={item.name} index={index} />;
 								})
 							) : (
