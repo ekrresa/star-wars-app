@@ -14,7 +14,7 @@ import './home.css';
 
 export default function Home() {
 	const { status: starshipsStatus, resolvedData: starships } = usePagesQuery([
-		'starshipsPages',
+		'starshipPages',
 		'starships',
 		1,
 	]);
