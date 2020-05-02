@@ -1,15 +1,17 @@
 import React from 'react';
 
-import { starshipImages } from '../../utils/images';
+import { getStarshipImages } from '../../utils';
 import styles from './starships.module.css';
 
 export function StarshipCard({ data, index }) {
-	const shipImage = starshipImages[index];
-
 	return (
 		<div className={`${styles.card} ${styles['card-flex']}`}>
 			<div className={styles['card-image']}>
-				<img src={shipImage} style={{ height: '100%' }} alt="starship" />
+				<img
+					src={getStarshipImages(data.name)}
+					style={{ height: '100%' }}
+					alt="starship"
+				/>
 			</div>
 			<div className={styles['card-body']}>
 				<div className={styles['card-info']}>

@@ -1,0 +1,17 @@
+.back {
+	margin-bottom: 1em;
+	color: #605eb1;
+	display: flex;
+}
+
+.back-link {
+	flex-grow: 0;
+	display: flex;
+	align-items: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.back-link-text {
+	margin-left: 0.4em;
+}

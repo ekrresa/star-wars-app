@@ -12,4 +12,11 @@
 	line-height: 1.6;
 	font-size: 1.5rem;
 	max-width: 24em;
+	transition: all 0.2s ease-in;
+}
+
+.viewbtn:hover {
+	background: #383737;
+	color: #fff;
+	font-weight: 700;
 }

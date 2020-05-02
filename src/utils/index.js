@@ -1,4 +1,4 @@
-import { starCharacters } from './images';
+import { starCharacters, starshipImages, unknownStarships } from './images';
 
 export function getImage(key) {
 	const imageKey = key.toLowerCase();
@@ -8,4 +8,20 @@ export function getImage(key) {
 	}
 
 	return starCharacters[imageKey];
+}
+
+export function getStarshipImages(key) {
+	const imageKey = key.toLowerCase();
+
+	if (!starshipImages[imageKey]) {
+		return getUnknownStarship();
+	}
+
+	return starshipImages[imageKey];
+}
+
+function getUnknownStarship() {
+	const index = Math.trunc(Math.random() * 4);
+
+	return unknownStarships[index];
 }
