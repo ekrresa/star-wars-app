@@ -9,6 +9,7 @@ import queryString from 'query-string';
 import { Jumbotron } from '../../components/Jumbotron';
 import { CharacterCard } from '../../components/CharactersCard';
 import { Footer } from '../../components/Footer';
+import { BackToHome } from '../../components/BackToHome';
 import { usePagesQuery } from '../../utils/fetch';
 import '../index.css';
 import './people.css';
@@ -53,6 +54,7 @@ export default function People() {
 			<main className="page">
 				<Jumbotron title={location.pathname.substring(1)} />
 				<section className="container" style={{ marginTop: '4em' }}>
+					<BackToHome />
 					<section className="select">
 						<Select
 							onChange={handleFilter}
