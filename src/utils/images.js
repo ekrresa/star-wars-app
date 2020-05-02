@@ -18,6 +18,8 @@ import owen from '../assets/images/owen-lars.jpg';
 import kenobi from '../assets/images/obi-wan-kenobi.jpg';
 import anakin from '../assets/images/Anakin-Skywalker.jpeg';
 import beru from '../assets/images/beru-whitesunlars.jpg';
+import solo from '../assets/images/han-solo.jpg';
+import quigon from '../assets/images/qui-gon-jinn.jpg';
 import unavailable from '../assets/images/character-unavailable.jpg';
 
 export const starshipImages = [
@@ -41,5 +43,7 @@ export const starCharacters = {
 	'owen lars': owen,
 	'obi-wan kenobi': kenobi,
 	'beru whitesun lars': beru,
+	'han solo': solo,
+	'qui-gon jinn': quigon,
 	unavailable,
 };
