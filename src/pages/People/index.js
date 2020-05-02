@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { useLocation, navigate } from '@reach/router';
 import { PropagateLoader } from 'react-spinners';
 import Select from 'react-select';
-import ReactPaginate from 'react-paginate';
-import { AiFillCaretLeft, AiFillCaretRight, AiOutlineEllipsis } from 'react-icons/ai';
 import queryString from 'query-string';
 
 import { Jumbotron } from '../../components/Jumbotron';
 import { CharacterCard } from '../../components/CharactersCard';
 import { Footer } from '../../components/Footer';
 import { BackToHome } from '../../components/BackToHome';
+import { Pagination } from '../../components/Pagination';
 import { usePagesQuery } from '../../utils/fetch';
 import '../index.css';
 import './people.css';
@@ -71,30 +70,14 @@ export default function People() {
 							<PropagateLoader />
 						)}
 					</section>
-					<section className="pagination">
-						{status === 'success' && (
-							<ReactPaginate
-								pageCount={Math.ceil(resolvedData.count / 10)}
-								marginPagesDisplayed={2}
-								pageRangeDisplayed={2}
-								disableInitialCallback={true}
-								initialPage={parseInt(page) - 1}
-								containerClassName={'paginate-container'}
-								pageClassName={'paginate-item'}
-								previousLabel={<AiFillCaretLeft />}
-								nextLabel={<AiFillCaretRight />}
-								pageLinkClassName={'paginate-link'}
-								breakLabel={<AiOutlineEllipsis />}
-								breakClassName={'ellipsis'}
-								activeClassName={'active'}
-								hrefBuilder={(page) => {
-									return `http://swapi.dev/api/people/?page=${page}`;
-								}}
-								onPageChange={handlePageClick}
-								disabledClassName="disabled"
-							/>
-						)}
-					</section>
+					{status === 'success' && (
+						<Pagination
+							page={page}
+							pageUrl="http://swapi.dev/api/people/?page="
+							onPageChange={handlePageClick}
+							count={resolvedData.count}
+						/>
+					)}
 				</section>
 			</main>
 			<Footer />
