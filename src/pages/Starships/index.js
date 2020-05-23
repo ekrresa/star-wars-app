@@ -5,6 +5,7 @@ import { navigate } from '@reach/router';
 import queryString from 'query-string';
 
 import { Jumbotron } from '../../components/Jumbotron';
+import { Container } from '../../components/Container';
 import { StarshipCard } from '../../components/StarshipsCard';
 import { BackToHome } from '../../components/BackToHome';
 import { Footer } from '../../components/Footer';
@@ -37,9 +38,9 @@ export default function Starships() {
 		<>
 			<main className="page">
 				<Jumbotron title={location.pathname.substring(1)} />
-				<section className="container" style={{ marginTop: '4em' }}>
+				<Container style={{ marginTop: '4em' }}>
 					<BackToHome />
-					<section className="page-grid">
+					<section className="starship-grid">
 						{status === 'success' ? (
 							resolvedData.results.map((item, index) => {
 								return <StarshipCard data={item} key={item.name} index={index} />;
@@ -56,7 +57,7 @@ export default function Starships() {
 							page={page}
 						/>
 					)}
-				</section>
+				</Container>
 			</main>
 			<Footer />
 		</>
