@@ -6,7 +6,7 @@
 	transition: all 0.3s ease;
 }
 
-.card-flex {
+.card-grid {
 	display: grid;
 	grid-template-columns: 1fr 9em;
 	grid-template-rows: 27em;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 810px) {
-	.card-flex {
+	.card-grid {
 		grid-template-columns: 1fr;
 		grid-template-rows: 17em 1fr;
 	}
@@ -48,7 +48,7 @@
 
 .card-info p {
 	font-size: 1.4rem;
-	font-weight: 400;
+	font-weight: 600;
 	color: #67615a;
 	text-transform: capitalize;
 }

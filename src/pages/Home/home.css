@@ -9,7 +9,7 @@
 .starship-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-auto-rows: 30em;
+	grid-auto-rows: 27em;
 	grid-gap: 4em;
 }
 
@@ -24,8 +24,10 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
 	.starship-grid {
+		grid-template-columns: 1fr;
+		grid-auto-rows: unset;
 		grid-gap: 1em;
 	}
 }
@@ -44,6 +46,12 @@
 	grid-template-rows: 1fr;
 	column-gap: 1em;
 	row-gap: 2em;
+}
+
+@media screen and (max-width: 650px) {
+	.character-grid {
+		row-gap: 1em;
+	}
 }
 
 .section {

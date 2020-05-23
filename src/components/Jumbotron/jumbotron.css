@@ -38,6 +38,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 0 0.2em;
 }
 
 .hero-img {
@@ -62,7 +63,8 @@
 
 .hero-desc {
 	text-align: center;
-	font-size: 2rem;
+	font-size: 2.3rem;
+	font-weight: 700;
 }
 
 .hero-searchform {
@@ -91,4 +93,13 @@
 	color: #827c7c;
 	text-align: center;
 	font-size: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+	.hero-img {
+		width: 8em;
+	}
+	.hero-title {
+		font-size: 5rem;
+	}
 }

@@ -7,7 +7,7 @@ export function CharacterCard({ data }) {
 	const gender = data.gender === 'n/a' ? 'robot' : data.gender;
 
 	return (
-		<div className={`${styles.card} ${styles['card-flex']}`}>
+		<div className={`${styles.card} ${styles['card-grid']}`}>
 			<div className={styles['card-image']}>
 				<img
 					src={getImage(data.name)}
