@@ -41,15 +41,9 @@
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-auto-rows: 26em;
+	grid-template-rows: 1fr;
 	column-gap: 1em;
 	row-gap: 2em;
-}
-
-@media screen and (max-width: 600px) {
-	.character-grid {
-		grid-auto-rows: 21em;
-	}
 }
 
 .section {

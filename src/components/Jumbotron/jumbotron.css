@@ -12,10 +12,22 @@
 	align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+	.header {
+		height: 30em;
+	}
+}
+
 .header-logo-row {
 	position: absolute;
 	top: 2.2em;
 	left: 5em;
+}
+
+@media screen and (max-width: 600px) {
+	.header-logo-row {
+		display: none;
+	}
 }
 
 .header-logo-container {
