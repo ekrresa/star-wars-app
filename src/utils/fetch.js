@@ -37,7 +37,7 @@ async function fetchPages(key, resource, page) {
 
 	const { data } = await axios({
 		method: 'GET',
-		url: `http://swapi.dev/api/${resource}/?page=${page}`,
+		url: `https://swapi.dev/api/${resource}/?page=${page}`,
 		cancelToken: source.token,
 	});
 
