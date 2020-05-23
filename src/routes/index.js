@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Router } from '@reach/router';
 
-import Loader from '../components/Loader';
+import { Loader } from '../components/Loader';
 
 const Homepage = lazy(() => import('../pages/Home'));
 const StarshipsPage = lazy(() => import('../pages/Starships'));
@@ -13,7 +13,7 @@ function Routes() {
 	return (
 		<Suspense fallback={<Loader />}>
 			<Router>
-				<Homepage path="/" />
+				<Homepage exact path="/" />
 				<StarshipsPage path="starships" />
 				<PeoplePage path="people" />
 				<PlanetsPage path="planets" />
