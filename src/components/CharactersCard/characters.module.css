@@ -8,7 +8,7 @@
 
 .card-grid {
 	display: grid;
-	grid-template-columns: 1fr 9em;
+	grid-template-columns: 1fr 12em;
 	grid-template-rows: 27em;
 	grid-gap: 0;
 	justify-content: space-around;
