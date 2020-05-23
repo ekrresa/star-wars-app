@@ -13,3 +13,9 @@
 	border: 3px solid #4a4848;
 	margin: 0.7rem auto;
 }
+
+@media screen and (max-width: 600px) {
+	.section-linebreak {
+		width: 40%;
+	}
+}

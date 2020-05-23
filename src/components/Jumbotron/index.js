@@ -40,7 +40,7 @@ export function Jumbotron({ title }) {
 				</div>
 				<hr className="hero-linebreak" />
 
-				<p className="hero-desc">Find your favourite Characters, Starships and Planets</p>
+				<p className="hero-desc">Explore the Star Wars Universe</p>
 
 				{path !== '/' && (
 					<form data-testid="searchForm" className="hero-searchform">

@@ -1,12 +1,12 @@
 import React from 'react';
-import MoonLoader from 'react-spinners/MoonLoader';
+import ScaleLoader from 'react-spinners/ScaleLoader';
 
 import './loader.css';
 
-export default function Loading() {
+export function Loader() {
 	return (
 		<div className="loader">
-			<MoonLoader size={30} />
+			<ScaleLoader size={50} margin={3} width={5} color="#2D697C" />
 		</div>
 	);
 }
