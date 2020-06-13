@@ -3,26 +3,25 @@ import Carousel from '@brainhubeu/react-carousel';
 import BeatLoader from 'react-spinners/BeatLoader';
 import { Link } from '@reach/router';
 
-import { PlanetsCard } from '../PlanetsCard';
-import { starPlanets } from '../../utils/images';
+import { MovieCard } from '../MovieCard';
+import { useImageConfigContext } from '../../context/ImageConfiguration';
+
 import '@brainhubeu/react-carousel/lib/style.css';
 import './carousel.css';
 
 export function Slider({ data }) {
+	const { data: imageData, status } = useImageConfigContext();
+
+	const BASE_URL = status === 'success' && imageData.images.secure_base_url;
+
 	if (!data) {
 		return <BeatLoader />;
 	}
 
-	const getRandomPlanetImage = () => {
-		const randomIndex = Math.floor(Math.random() * starPlanets.length);
-		return starPlanets[randomIndex];
-	};
-
 	return (
 		<Carousel
-			slidesPerPage={3}
+			slidesPerPage={4}
 			arrows
-			infinite
 			dots
 			breakpoints={{
 				640: {
@@ -35,10 +34,10 @@ export function Slider({ data }) {
 				},
 			}}
 		>
-			{data.slice(0, 3).map((item) => {
+			{data.map((item) => {
 				return (
-					<Link to="#" key={item.name}>
-						<PlanetsCard img={getRandomPlanetImage()} name={item.name} />
+					<Link to="#" key={item.id}>
+						<MovieCard img={`${BASE_URL}/w500/${item.poster_path}`} name={item.title} />
 					</Link>
 				);
 			})}

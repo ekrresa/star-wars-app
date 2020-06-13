@@ -8,10 +8,6 @@ import starship2 from '../assets/images/starship-3.jpg';
 import starship3 from '../assets/images/starship-4.jpg';
 import starship4 from '../assets/images/starship-5.jpg';
 
-import planet1 from '../assets/images/planet-1.jpg';
-import planet2 from '../assets/images/planet-2.jpg';
-import planet3 from '../assets/images/planet-3.jpg';
-
 import c3po from '../assets/images/c-3po.webp';
 
 export const starshipImages = {
@@ -28,8 +24,6 @@ export const starshipImages = {
 };
 
 export const unknownStarships = [starship1, starship2, starship3, starship4];
-
-export const starPlanets = [planet1, planet2, planet3];
 
 export const starCharacters = {
 	'luke skywalker': 'https://i.imgur.com/Z6IUqgl.jpg',
