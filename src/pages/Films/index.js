@@ -24,8 +24,8 @@ export default function Films() {
 			<main className="page background">
 				<div className="container">
 					<div className="title">
-						<BackToHome />
 						<h1 className="title-text">The Star Wars Collection</h1>
+						<BackToHome />
 					</div>
 					{moviesStatus === 'success' ? (
 						<section className="film-grid">
