@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 600px) {
 	.header {
-		height: 30em;
+		height: 33em;
 	}
 }
 
@@ -68,6 +68,13 @@
 	line-height: 1.6;
 }
 
+@media screen and (max-width: 500px) {
+	.hero-desc {
+		padding: 0em 0.6em;
+		font-size: 2rem;
+	}
+}
+
 .hero-searchform {
 	width: 100%;
 }
@@ -101,6 +108,6 @@
 		width: 8em;
 	}
 	.hero-title {
-		font-size: 5rem;
+		font-size: 4rem;
 	}
 }
