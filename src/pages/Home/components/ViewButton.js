@@ -3,11 +3,11 @@ import { Link } from '@reach/router';
 
 import './viewbutton.css';
 
-export function ViewMoreButton({ name }) {
+export function ViewMoreButton({ name, text }) {
 	return (
 		<div className="viewbtn-container">
 			<Link to={`/${name}`} className="btn viewbtn">
-				view more
+				{text || 'view more'}
 			</Link>
 		</div>
 	);

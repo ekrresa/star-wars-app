@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import ErrorBoundary from './ErrorBoundary';
+import { ImageConfigProvider } from './context/ImageConfiguration';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<ErrorBoundary>
-			<App />
+			<ImageConfigProvider>
+				<App />
+			</ImageConfigProvider>
 		</ErrorBoundary>
 	</React.StrictMode>,
 	document.getElementById('root'),

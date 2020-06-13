@@ -1,35 +1,21 @@
 import axios from 'axios';
 import { useQuery, usePaginatedQuery } from 'react-query';
 
-export async function fetchMovie(key, resource) {
-	const { REACT_APP_BASE_URL, REACT_APP_MOVIE_TOKEN } = process.env;
-
-	const { data } = await axios({
-		method: 'GET',
-		url: `${REACT_APP_BASE_URL}${resource}`,
-		headers: {
-			Authorization: `Bearer ${REACT_APP_MOVIE_TOKEN}`,
-		},
-	});
-
-	return data;
-}
-
-async function fetchResource(key, resource) {
-	const { REACT_APP_STAR_WARS_URL } = process.env;
+export async function fetchMovies(key, resource) {
+	const { REACT_APP_MOVIE_APIKEY } = process.env;
 	const source = axios.CancelToken.source();
 
 	const { data } = await axios({
 		method: 'GET',
-		url: `${REACT_APP_STAR_WARS_URL}${resource}`,
+		url: `https://api.themoviedb.org/3${resource}?api_key=${REACT_APP_MOVIE_APIKEY}`,
 		cancelToken: source.token,
 	});
 
-	data.results.cancel = () => {
+	data.cancel = () => {
 		source.cancel('Request was cancelled');
 	};
 
-	return data.results;
+	return data;
 }
 
 async function fetchPages(key, resource, page) {
@@ -49,7 +35,7 @@ async function fetchPages(key, resource, page) {
 }
 
 export function useCancellableQuery(query) {
-	const { data, error, status } = useQuery(query, fetchResource, {
+	const { data, error, status } = useQuery(query, fetchMovies, {
 		staleTime: Infinity,
 		refetchOnWindowFocus: false,
 	});

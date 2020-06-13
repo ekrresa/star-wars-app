@@ -18,7 +18,10 @@ export default function Home() {
 		'starships',
 		1,
 	]);
-	const { data: planets } = useCancellableQuery(['planets', '/planets/']);
+	const { data: movies, status: moviesStatus } = useCancellableQuery([
+		'movies',
+		'/collection/10',
+	]);
 	const { status: peopleStatus, resolvedData: people } = usePagesQuery([
 		'peoplePages',
 		'people',
@@ -41,9 +44,17 @@ export default function Home() {
 							)}
 						</section>
 					</HomeSection>
-					<HomeSection title="popular planets" pageTo="planets">
+					<HomeSection
+						title="the star wars collection"
+						pageTo="films"
+						viewText="view gallery"
+					>
 						<section className="carousel-grid">
-							<Slider data={planets} />
+							{moviesStatus === 'success' ? (
+								<Slider data={movies.parts} />
+							) : (
+								<BeatLoader />
+							)}
 						</section>
 					</HomeSection>
 					<HomeSection title="popular people" pageTo="people">

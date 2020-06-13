@@ -16,7 +16,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+	font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
 		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -41,7 +41,7 @@ img {
 .container {
 	max-width: 85em;
 	margin: 0 auto;
-	padding: 0 1em;
+	padding: 0 0.5em;
 }
 
 .row {

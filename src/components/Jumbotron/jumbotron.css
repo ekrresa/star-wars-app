@@ -14,7 +14,7 @@
 
 @media screen and (max-width: 600px) {
 	.header {
-		height: 30em;
+		height: 33em;
 	}
 }
 
@@ -56,15 +56,23 @@
 }
 
 .hero-linebreak {
-	width: 93%;
-	border: 3px solid #fff;
-	margin: 1px;
+	padding-bottom: 0.4em;
+	border-bottom: 6px solid;
 }
 
 .hero-desc {
 	text-align: center;
 	font-size: 2.3rem;
-	font-weight: 700;
+	font-weight: 600;
+	max-width: 35em;
+	line-height: 1.6;
+}
+
+@media screen and (max-width: 500px) {
+	.hero-desc {
+		padding: 0em 0.6em;
+		font-size: 2rem;
+	}
 }
 
 .hero-searchform {
@@ -100,6 +108,6 @@
 		width: 8em;
 	}
 	.hero-title {
-		font-size: 5rem;
+		font-size: 4rem;
 	}
 }
