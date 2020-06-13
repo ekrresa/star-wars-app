@@ -35,7 +35,7 @@ export function Jumbotron({ title }) {
 			</section>
 
 			<section className="hero">
-				<div className="row align-center">
+				<div className="row align-center hero-linebreak">
 					<div className="hero-img">
 						<img
 							data-testid="heroLogo"
@@ -47,9 +47,11 @@ export function Jumbotron({ title }) {
 						<h1>{title || 'directory'}</h1>
 					</div>
 				</div>
-				<hr className="hero-linebreak" />
 
-				<p className="hero-desc">Explore the Star Wars Universe</p>
+				<p className="hero-desc">
+					An epic space-opera theatrical film series, which depicts the adventures of
+					various characters, a long time ago in a galaxy far, far away….
+				</p>
 
 				{path !== '/' && (
 					<form data-testid="searchForm" className="hero-searchform">
