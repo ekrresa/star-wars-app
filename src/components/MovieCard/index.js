@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './planets.module.css';
+import styles from './movie.module.css';
 
 export function MovieCard({ img }) {
 	return (

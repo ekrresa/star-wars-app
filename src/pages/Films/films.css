@@ -1,0 +1,44 @@
+.background {
+	position: relative;
+	background: url(https://i.imgur.com/dXO77Dx.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+}
+
+.film-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 3em;
+}
+
+@media screen and (max-width: 1000px) {
+	.film-grid {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 1.7em;
+	}
+}
+@media screen and (max-width: 620px) {
+	.film-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media screen and (max-width: 550px) {
+	.film-grid {
+		grid-gap: 0.8em;
+	}
+}
+
+.title {
+	padding: 4em 0em 2em;
+}
+
+.title-text {
+	text-align: center;
+	font-size: 4.3rem;
+	text-shadow: 4px 4px 8px rgb(191, 136, 136);
+	margin: 0;
+	margin-bottom: 1em;
+}
