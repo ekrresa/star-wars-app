@@ -21,8 +21,11 @@ export function Slider({ data }) {
 	return (
 		<Carousel
 			slidesPerPage={4}
-			arrows
+			slidesPerScroll={2}
 			dots
+			autoPlay={2000}
+			animationSpeed={1000}
+			infinite
 			breakpoints={{
 				640: {
 					slidesPerPage: 1,
@@ -37,7 +40,11 @@ export function Slider({ data }) {
 			{data.map((item) => {
 				return (
 					<Link to="#" key={item.id}>
-						<MovieCard img={`${BASE_URL}/w500/${item.poster_path}`} name={item.title} />
+						<MovieCard
+							style={{ margin: '0em 0.5em' }}
+							img={`${BASE_URL}/w500/${item.poster_path}`}
+							name={item.title}
+						/>
 					</Link>
 				);
 			})}
