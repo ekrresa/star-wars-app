@@ -2,14 +2,15 @@ import React from 'react';
 import { Link, useLocation } from '@reach/router';
 import { FiSearch } from 'react-icons/fi';
 
-import banner1 from '../../assets/images/resource.jpg';
-import banner2 from '../../assets/images/hero-banner.jpg';
-import logo from '../../assets/images/logo.png';
 import './jumbotron.css';
 
 export function Jumbotron({ title }) {
 	const path = useLocation().pathname;
-	const banner = path === '/' ? banner2 : banner1;
+
+	const homeBanner = 'https://i.imgur.com/RsodL7F.jpg';
+	const resourceBanner = 'https://i.imgur.com/aunaAeY.jpg';
+
+	const banner = path === '/' ? homeBanner : resourceBanner;
 
 	const colors = {
 		planets: '#c58127',
@@ -24,7 +25,11 @@ export function Jumbotron({ title }) {
 			<section className="header-logo-row">
 				<div className="header-logo-container">
 					<Link to="/">
-						<img data-testid="siteLogo" src={logo} alt="app logo" />
+						<img
+							data-testid="siteLogo"
+							src="https://i.imgur.com/ALovV5o.png"
+							alt="app logo"
+						/>
 					</Link>
 				</div>
 			</section>
@@ -32,7 +37,11 @@ export function Jumbotron({ title }) {
 			<section className="hero">
 				<div className="row align-center">
 					<div className="hero-img">
-						<img data-testid="heroLogo" src={logo} alt="title" />
+						<img
+							data-testid="heroLogo"
+							src="https://i.imgur.com/ALovV5o.png"
+							alt="title"
+						/>
 					</div>
 					<div className="hero-title" style={{ color: titleColor }}>
 						<h1>{title || 'directory'}</h1>
